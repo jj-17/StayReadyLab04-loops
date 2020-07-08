@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CarRide {
 
-    public String areWeThereYetTest() {
+    /*public String areWeThereYetTest() {
 
         Scanner response = new Scanner(System.in);
 
@@ -36,11 +36,29 @@ public class CarRide {
 
         return final_answer;
     }
+*/
+        public String areWeThereYet() {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Are we There Yet?");
+            String response = sc.next();
 
+            while (!evalString(response)) {
+                System.out.println("Are we There Yet?");
+                response = sc.next();
+            }
+            return "Good!";
+        }
+        public boolean evalString (String response) {
+            boolean output =false;
+            if (response.equalsIgnoreCase("Yes")){
+                output=true;
+            }
+            return output;
+        }
 
     public static void main(String[] args) {
         CarRide car = new CarRide();
-        System.out.println(car.areWeThereYetTest());
+        System.out.println(car.areWeThereYet());
 
     }
     }
